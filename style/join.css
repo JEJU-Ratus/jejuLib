@@ -1,0 +1,50 @@
+main {
+  width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+h2 {
+  margin: 30px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+.essential-info > p{
+  color: rgb(80, 80, 80);
+  font-weight: bold;
+}
+.essential-mark{
+  color: red;
+}
+
+table,
+tr,
+td {
+  border: 1px solid rgb(208, 204, 204);
+}
+table{
+  width: 800px;
+  border-top: 2px solid black;
+}
+td{
+  height: 55px;
+  vertical-align: middle;
+}
+.info__head{
+  text-align: center;
+}
+.info__input{
+  padding-left: 10px;
+}
+.btn_join{
+  float: right;
+  clear: both;
+  margin: 30px 480px 30px 0;
+}
