@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>회원가입</title>
-    <link rel="stylesheet" href="style/reset.css" >
-    <link rel="stylesheet" href="style/join.css" >
-  </head>
-  <body>
-    <header>
-      <!-- 일단은 가리기 -->
-      <h1>회원가입</h1>
-    </header>
-    <main>
-      <form id="join-form" action="join_finish.html" method="post">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/join.css">
+</head>
+
+<body>
+  <header>
+    <!-- 일단은 가리기 -->
+    <h1>회원가입</h1>
+  </header>
+  <main>
+    <form id="join-form" action="join_finish.html" method="post" onsubmit="return inputFocusAll()">
       <section class="essential-info">
         <h2>기본정보&#40;필수&#41;</h2>
         <p><span class="essential-mark">&#42;</span> 표시된 항목은 필수 입력 항목입니다.</p>
         <table>
-            <tr>
-              <td class="info__head"><label for="uid">아이디</label><span class="essential-mark">&#42;</span></td>
-              <td class="info__input">
-                <input type="text" id="uid" name="uid" placeholder="아이디">
-                <button>중복확인</button>
-                <span>영문,숫자만 가능합니다.&#40;6-20자&#41;</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="info__head"><label for="upw">비밀번호</label><span class="essential-mark">&#42;</span></td>
-              <td  class="info__input">
-                <input type="password" id="upw" name="upw" placeholder="비밀번호">
-                <p>&#8251;&#40;문자&#40;영문&#41;&#43;특수문자&#43;숫자&#41; 조합과 9자리부터~20자리 사이 가능합니다.</p>
-                <p></p>특수문자는&#33;&#64;&#35;&#36;&#37;&#94;&#42;를 사용하실 수 있습니다.</p>  
-              </td>
-            </tr>
-            <tr>
-              <td class="info__head"><label for="upw_check">비밀번호확인</label><span class="essential-mark">&#42;</span></td>
-              <td class="info__input"><input type="password" id="upw_check" name="upw_check" placeholder="비밀번호 확인">
-              <p>&#8251;위에서 입력한 비밀번호를 한번 더 입력해 주십시오.</p></td>
-            </tr>
+          <tr>
+            <td class="info__head"><label for="uid">아이디</label><span class="essential-mark">&#42;</span></td>
+            <td class="info__input">
+              <input type="text" id="uid" name="uid" placeholder="아이디" class="focus">
+              <button>중복확인</button>
+              <span>영문,숫자만 가능합니다.&#40;6-20자&#41;</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="info__head"><label for="upw">비밀번호</label><span class="essential-mark">&#42;</span></td>
+            <td class="info__input">
+              <input type="password" id="upw" name="upw" placeholder="비밀번호" class="focus">
+              <p>&#8251;&#40;문자&#40;영문&#41;&#43;특수문자&#43;숫자&#41; 조합과 9자리부터~20자리 사이 가능합니다.</p>
+              <p></p>특수문자는&#33;&#64;&#35;&#36;&#37;&#94;&#42;를 사용하실 수 있습니다.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="info__head"><label for="upw_check">비밀번호확인</label><span class="essential-mark">&#42;</span></td>
+            <td class="info__input"><input type="password" id="upw_check" name="upw_check" placeholder="비밀번호 확인"
+                class="focus">
+              <p>&#8251;위에서 입력한 비밀번호를 한번 더 입력해 주십시오.</p>
+            </td>
+          </tr>
         </table>
       </section>
       <section>
@@ -47,17 +51,18 @@
         <table>
           <tr>
             <td class="info__head"><label for="uname">이름</label><span class="essential-mark">&#42;</span></td>
-            <td class="info__input"><input type="text" id="uname" name="uname" placeholder="이름"></td>
+            <td class="info__input"><input type="text" id="uname" name="uname" placeholder="이름" class="focus"></td>
           </tr>
           <tr>
             <td class="info__head"><label for="yy">생년월일</label><span class="essential-mark">&#42;</span></td>
-            <td class="info__input"><input type="text" name="yy" id="yy" placeholder="년(4자)" maxlength="4">
-              <select name="mm" id="mm">
+            <td class="info__input"><input type="text" name="yy" id="yy" placeholder="년(4자)" maxlength="4"
+                class="focus">
+              <select name="mm" id="mm" class="focus">
                 <option value="" selected>월</option>
                 <option value="01">1</option>
                 <option value="02">2</option>
                 <option value="03">3</option>
-                <option value="04">4</option> 
+                <option value="04">4</option>
                 <option value="05">5</option>
                 <option value="06">6</option>
                 <option value="07">7</option>
@@ -68,25 +73,29 @@
                 <option value="12">12</option>
               </select>
               <label for="dd"></label>
-              <input type="text" name="dd" id="dd" placeholder="일" maxlength="2"></td>
+              <input type="text" name="dd" id="dd" placeholder="일" maxlength="2" class="focus">
+            </td>
           </tr>
           <tr>
             <td class="info__head"><label for="phone">휴대폰</label><span class="essential-mark">&#42;</span></td>
-            <td class="info__input"><input type="text" id="phone" name="phone" placeholder="휴대전화">
-            <span>&#8251;&#39;&#45;&#39;를 포함하지 않는 전화번호를 입력해주세요.</span></td>
+            <td class="info__input"><input type="text" id="phone" name="phone" placeholder="휴대전화" class="focus">
+              <span>&#8251;&#39;&#45;&#39;를 포함하지 않는 전화번호를 입력해주세요.</span>
+            </td>
           </tr>
           <tr>
             <td class="info__head"><label for="email_id">이메일</label><span class="essential-mark">&#42;</span></td>
-            <td class="info__input"><input type="text" id="email_id" name="email_id" placeholder="아이디"><span>&#64;</span>
-              <label for="email_adress"></label>
-            <input type="text" id="email_adress" name="email_adress">
-          <select name="adress_list" id="adress_list">
-            <option value="type">직접입력</option>
-            <option value="naver.com">naver.com</option>
-            <option value="google.com">google.com</option>
-            <option value="hanmail.net">hanmail.net</option>
-            <option value="nate.com">nate.com</option>
-          </select></td>
+            <td class="info__input"><input type="text" id="email_id" name="email_id" placeholder="아이디"
+                class="focus"><span>&#64;</span>
+              <label for="email_adress">메일주소</label>
+              <input type="text" id="email_adress" name="email_adress" class="focus">
+              <select name="adress_list" id="adress_list">
+                <option value="type">직접입력</option>
+                <option value="naver.com">naver.com</option>
+                <option value="google.com">google.com</option>
+                <option value="hanmail.net">hanmail.net</option>
+                <option value="nate.com">nate.com</option>
+              </select>
+            </td>
           </tr>
         </table>
       </section>
@@ -95,18 +104,22 @@
         <table>
           <tr>
             <td class="info__head"><label for="home">우편번호</label></td>
-            <td class="info__input"><input type="text" name="home" id="home">
-            <input type="button" id="serch_post" value="우편번호 찾기"></td>
+            <td class="info__input"><input type="text" name="home" id="home" class="focus">
+              <input type="button" id="serch_post" value="우편번호 찾기">
+            </td>
           </tr>
           <tr>
-            <td class="info__head"><p>주소</p></td>
+            <td class="info__head">
+              <p>주소</p>
+            </td>
             <td class="info__input"><input type="text"></td>
           </tr>
         </table>
       </section>
     </form>
     <button form="join-form" class="btn_join">회원가입</button>
-    </main>
-    <script src="script/join.js"></script>
-  </body>
+  </main>
+  <script src="script/join.js"></script>
+</body>
+
 </html>
