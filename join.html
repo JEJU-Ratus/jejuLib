@@ -14,7 +14,7 @@
       <h1>회원가입</h1>
     </header>
     <main>
-      <form name="join_form" action="#" method="post">
+      <form id="join-form" action="join_finish.html" method="post">
       <section class="essential-info">
         <h2>기본정보&#40;필수&#41;</h2>
         <p><span class="essential-mark">&#42;</span> 표시된 항목은 필수 입력 항목입니다.</p>
@@ -105,7 +105,8 @@
         </table>
       </section>
     </form>
-    <button type="submit" form="join_form" class="btn_join">회원가입</button>
+    <button form="join-form" class="btn_join">회원가입</button>
     </main>
+    <script src="script/join.js"></script>
   </body>
 </html>
