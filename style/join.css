@@ -1,8 +1,10 @@
-main {
+/* 임시 레이아웃 크기 */
+main { 
   width: 1280px;
   margin: 0 auto;
   position: relative;
 }
+/* 가려놓은 페이지 제목 <회원가입> */
 h1 {
   position: absolute;
   width: 1px;
@@ -11,11 +13,13 @@ h1 {
   overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0);
 }
+/* 섹션별 제목 */
 h2 {
   margin: 30px 0;
   font-size: 24px;
   font-weight: bold;
 }
+/* 별표시 설명 */
 .essential-info > p{
   color: rgb(80, 80, 80);
   font-weight: bold;
@@ -23,7 +27,16 @@ h2 {
 .essential-mark{
   color: red;
 }
-
+/* 상태 메시지 */
+.error-message{
+  color: red;
+  font-weight: bold;
+}
+.success-message{
+  color: green;
+  font-weight: bold;
+}
+/* 테이블 속성 */
 table,
 tr,
 td {
@@ -37,12 +50,15 @@ td{
   height: 55px;
   vertical-align: middle;
 }
+/* 테이블에서 소주제 (아이디, 비밀번호 등) */
 .info__head{
   text-align: center;
 }
+/*  입력 필드 */
 .info__input{
   padding-left: 10px;
 }
+/* 제출 버튼 */
 .btn_join{
   float: right;
   clear: both;
