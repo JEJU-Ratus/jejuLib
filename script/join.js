@@ -11,14 +11,18 @@ let finalFormCheck = true;
 // onsubmit 속성함수로, 포커스 함수와 유효성 검사 함수 모두 합쳐서 작동시키는 메인 함수
 function joinFormCheck(){
     inputUid();
-    inputFocusAll();
+    console.log(finalFormCheck);
+
     for(i=0;i<formCheckArr.length;i++){
         if(!formCheckArr[i]){
             finalFormCheck = formCheckArr[i];
             break;
         }
+        else{
+            finalFormCheck = formCheckArr[i];
+        }
     }
-
+    console.log(finalFormCheck);
     return finalFormCheck;
 }
 // 포커스 함수
