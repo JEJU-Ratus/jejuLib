@@ -1,7 +1,10 @@
 // 참조
-const uid = document.getElementById('uid');
+const uid = document.getElementById('uid'),
+upw = document.getElementById('upw');
 // 정규표현식
-const uidReg = /^[a-z0-9]{1}[a-z0-9]{5,20}$/
+const uidReg = /^[a-z0-9]{1}[a-z0-9]{5,20}$/,
+upwReg = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^*])[\da-zA-Z!@#$%^*]{9,20}$/;
+
 // 폼 유효성 합격 기준 (합격 : true(기본값) / 불합격 : false)
 let formCheckArr = [];
 let finalFormCheck = true;
@@ -28,7 +31,7 @@ function inputFocusAll(){
         }
     }
 }
-// 유효성 검사 함수
+// 아이디 유효성 검사 함수
 function inputUid(){
     if(!uid.value){
         console.log("값 없음");
