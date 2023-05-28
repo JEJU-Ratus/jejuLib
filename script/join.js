@@ -38,6 +38,7 @@ uname.addEventListener('focusout',inputUname);
 birthYear.addEventListener('focusout', inputBirthYear);
 birthMonth.addEventListener('focusout', inputBirthYear);
 birthDay.addEventListener('focusout', inputBirthYear);
+phone.addEventListener('focusout',inputPhone);
 
 // onsubmit 속성함수로, 포커스 함수와 유효성 검사 함수 모두 합쳐서 작동시키는 메인 함수
 function joinFormCheck(){
@@ -46,6 +47,7 @@ function joinFormCheck(){
     inputUpwCheck();
     inputUname();
     inputBirthYear();
+    inputPhone();
     inputFocusAll();
     for(i=0;i<formCheckArr.length;i++){
         if(!formCheckArr[i]){
@@ -231,6 +233,32 @@ function inputBirthDay(){
             birthMessage.classList.add("success-message");
             birthMessage.textContent = "완벽합니다!";
             formCheckArr[4] = true;
+        }
+    }
+}
+
+function inputPhone(){
+    if(!phone.value){
+        phoneMessage.textContent = "";
+        phoneMessage.classList.add("error-message");
+        phoneMessage.classList.remove("success-message");
+        phoneMessage.textContent = "값이 입력되지 않았습니다.";
+        formCheckArr[5] = false;
+    }
+    else{
+        if(!phoneReg.test(phone.value)){
+            phoneMessage.textContent = "";
+            phoneMessage.classList.add("error-message");
+            phoneMessage.classList.remove("success-message");
+            phoneMessage.textContent = "값이 올바르게 입력되지 않았습니다.";
+            formCheckArr[5] = false;
+        }
+        else{
+            phoneMessage.textContent = "";
+            phoneMessage.classList.remove("error-message");
+            phoneMessage.classList.add("success-message");
+            phoneMessage.textContent = "완벽합니다!";
+            formCheckArr[5] = true;
         }
     }
 }
