@@ -36,6 +36,7 @@
               <input type="password" id="upw" name="upw" placeholder="비밀번호" class="focus">
               <p>&#8251;&#40;문자&#40;영문&#41;&#43;특수문자&#43;숫자&#41; 조합과 9자리부터~20자리 사이 가능합니다.</p>
               <p></p>특수문자는&#33;&#64;&#35;&#36;&#37;&#94;&#42;를 사용하실 수 있습니다.</p>
+              <p id="upw_message"></p>
             </td>
           </tr>
           <tr>
@@ -43,6 +44,7 @@
             <td class="info__input"><input type="password" id="upw_check" name="upw_check" placeholder="비밀번호 확인"
                 class="focus">
               <p>&#8251;위에서 입력한 비밀번호를 한번 더 입력해 주십시오.</p>
+              <p id="upw_check_message"></p>  
             </td>
           </tr>
         </table>
@@ -52,7 +54,9 @@
         <table>
           <tr>
             <td class="info__head"><label for="uname">이름</label><span class="essential-mark">&#42;</span></td>
-            <td class="info__input"><input type="text" id="uname" name="uname" placeholder="이름" class="focus"></td>
+            <td class="info__input"><input type="text" id="uname" name="uname" placeholder="이름" class="focus">
+              <p id="uname_message"></p>
+            </td>
           </tr>
           <tr>
             <td class="info__head"><label for="yy">생년월일</label><span class="essential-mark">&#42;</span></td>
@@ -75,12 +79,14 @@
               </select>
               <label for="dd"></label>
               <input type="text" name="dd" id="dd" placeholder="일" maxlength="2" class="focus">
+              <p id="birth_message"></p>  
             </td>
           </tr>
           <tr>
             <td class="info__head"><label for="phone">휴대폰</label><span class="essential-mark">&#42;</span></td>
             <td class="info__input"><input type="text" id="phone" name="phone" placeholder="휴대전화" class="focus">
               <span>&#8251;&#39;&#45;&#39;를 포함하지 않는 전화번호를 입력해주세요.</span>
+              <p id="phone_message"></p>
             </td>
           </tr>
           <tr>
@@ -96,6 +102,7 @@
                 <option value="hanmail.net">hanmail.net</option>
                 <option value="nate.com">nate.com</option>
               </select>
+              <p id="email_message"></p>
             </td>
           </tr>
         </table>
