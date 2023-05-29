@@ -112,16 +112,19 @@
         <h2>선택정보</h2>
         <table>
           <tr>
-            <td class="info__head"><label for="home">우편번호</label></td>
-            <td class="info__input"><input type="text" name="home" id="home" class="focus">
-              <input type="button" id="serch_post" value="우편번호 찾기">
+            <td class="info__head"><label for="sample4_postcode">우편번호</label></td>
+            <td class="info__input"><input type="text" id="sample4_postcode" placeholder="우편번호" class="focus">
+              <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
             </td>
           </tr>
           <tr>
             <td class="info__head">
               <p>주소</p>
             </td>
-            <td class="info__input"><input type="text"></td>
+            <td class="info__input"><input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+              <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+              <span id="guide" style="color:#999;display:none"></span><br>
+              <input type="text" id="sample4_detailAddress" placeholder="상세주소"></td>
           </tr>
         </table>
       </section>
@@ -129,6 +132,8 @@
     <button form="join-form" class="btn_join">회원가입</button>
   </main>
   <script src="script/join.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="script/homeAdress.js"></script>
 </body>
 
 </html>
