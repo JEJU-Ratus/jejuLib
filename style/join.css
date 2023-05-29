@@ -5,7 +5,7 @@ main {
   position: relative;
 }
 /* 가려놓은 페이지 제목 <회원가입> */
-h1 {
+h1,.email-adress_label {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -57,6 +57,10 @@ td{
 /*  입력 필드 */
 .info__input{
   padding-left: 10px;
+}
+#email_adress{
+  background-color: rgb(214, 214, 214);
+  border: 1px solid black;
 }
 /* 제출 버튼 */
 .btn_join{

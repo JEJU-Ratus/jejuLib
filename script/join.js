@@ -8,7 +8,8 @@ birthMonth = document.getElementById('mm'),
 birthDay = document.getElementById('dd'),
 phone = document.getElementById('phone'),
 emailId = document.getElementById('email_id'),
-emailAdress = document.getElementById('email_adress');
+emailAdress = document.getElementById('email_adress'),
+adressList = document.getElementById('adress_list');
 
 // 유효성 검사 메시지에 대한 참조
 const uidMessage = document.getElementById('uid_message'),
@@ -260,5 +261,19 @@ function inputPhone(){
             phoneMessage.textContent = "완벽합니다!";
             formCheckArr[5] = true;
         }
+    }
+}
+
+function inputEmailAdress(){
+    if(adressList.value === 'type'){
+        emailAdress.readOnly = false;
+        emailAdress.value ='';
+        emailAdress.style.backgroundColor = "white";
+        emailAdress.focus();
+    }
+    else{
+        emailAdress.readOnly = true;
+        emailAdress.style.backgroundColor = "rgb(214, 214, 214)";
+        emailAdress.value = adressList.value;
     }
 }
