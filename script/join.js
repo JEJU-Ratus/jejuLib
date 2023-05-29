@@ -26,7 +26,8 @@ upwReg = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^*])[\da-zA-Z!@#$%^*]{9,20}$/,
 unameReg = /^[가-힣]{2,30}$/,
 yearReg = /^(19[0-9][0-9]|20\d{2})$/,
 dayReg = /^([1-9]|[1-2][0-9]|3[0-1])$/,
-phoneReg = /^(010|011|016|017|018|019)(\d{3}|\d{4})(\d{4})$/;
+phoneReg = /^(010|011|016|017|018|019)(\d{3}|\d{4})(\d{4})$/,
+emailAdressReg = /^((?:[A-Za-z0-9.\-])*(?:[A-Za-z0-9])\.(?:[A-Za-z0-9]){2,})$/;
 
 // 폼 유효성 합격 기준 (합격 : true(기본값) / 불합격 : false)
 let formCheckArr = [];
@@ -40,6 +41,11 @@ birthYear.addEventListener('focusout', inputBirthYear);
 birthMonth.addEventListener('focusout', inputBirthYear);
 birthDay.addEventListener('focusout', inputBirthYear);
 phone.addEventListener('focusout',inputPhone);
+emailId.addEventListener('focusout',inputEmailId);
+emailAdress.addEventListener('focusout',inputEmailId);
+adressList.addEventListener('focusout',inputEmailId);
+
+
 
 // onsubmit 속성함수로, 포커스 함수와 유효성 검사 함수 모두 합쳐서 작동시키는 메인 함수
 function joinFormCheck(){
@@ -49,6 +55,7 @@ function joinFormCheck(){
     inputUname();
     inputBirthYear();
     inputPhone();
+    inputEmailId();
     inputFocusAll();
     for(i=0;i<formCheckArr.length;i++){
         if(!formCheckArr[i]){
@@ -264,7 +271,47 @@ function inputPhone(){
     }
 }
 
+function inputEmailId(){
+    if(!emailId.value){
+        emailMessage.textContent = "";
+        emailMessage.classList.add("error-message");
+        emailMessage.classList.remove("success-message");
+        emailMessage.textContent = "아이디가 입력되지 않았습니다.";
+        formCheckArr[6] = false;
+    }
+    else{
+        inputEmailAdress();
+    }
+}
+
 function inputEmailAdress(){
+    if(!emailAdress.value){
+        emailMessage.textContent = "";
+        emailMessage.classList.add("error-message");
+        emailMessage.classList.remove("success-message");
+        emailMessage.textContent = "주소가 입력되지 않았습니다.";
+        formCheckArr[6] = false;
+    }
+    else{
+        if(!emailAdressReg.test(emailAdress.value)){
+            emailMessage.textContent = "";
+            emailMessage.classList.add("error-message");
+            emailMessage.classList.remove("success-message");
+            emailMessage.textContent = "주소가 올바르게 입력되지 않았습니다.";
+            formCheckArr[6] = false;
+        }
+        else{
+            emailMessage.textContent = "";
+            emailMessage.classList.remove("error-message");
+            emailMessage.classList.add("success-message");
+            emailMessage.textContent = "완벽합니다!";
+            formCheckArr[6] = true;
+        }
+    }
+}
+
+
+function selectEmailAdress(){
     if(adressList.value === 'type'){
         emailAdress.readOnly = false;
         emailAdress.value ='';
