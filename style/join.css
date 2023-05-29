@@ -62,6 +62,9 @@ td{
   background-color: rgb(214, 214, 214);
   border: 1px solid black;
 }
+#sample4_roadAddress, #sample4_jibunAddress, #sample4_detailAddress{
+  width: 400px;
+}
 /* 제출 버튼 */
 .btn_join{
   float: right;
